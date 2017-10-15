@@ -9,7 +9,7 @@ extern "system" {
     // pub fn AddLocalAlternateComputerNameW();
     // pub fn AppXGetOSMaxVersionTested();
     // pub fn BaseSetLastNTError();
-    pub fn Beep(dwFreq: DWORD, dwDuration: DWORD) -> BOOL;
+    pub fn Beep(dwFreq: DWORD, dwDuration: DWORD) -> BOOL; 
     pub fn CallNamedPipeW(
         lpNamedPipeName: LPCWSTR, lpInBuffer: LPVOID, nInBufferSize: DWORD, lpOutBuffer: LPVOID,
         nOutBufferSize: DWORD, lpBytesRead: LPDWORD, nTimeOut: DWORD,
@@ -662,10 +662,7 @@ extern "system" {
     pub fn Module32FirstW(hSnapshot: HANDLE, lpme: LPMODULEENTRY32W) -> BOOL;
     pub fn Module32Next(hSnapshot: HANDLE, lpme: LPMODULEENTRY32) -> BOOL;
     pub fn Module32NextW(hSnapshot: HANDLE, lpme: LPMODULEENTRY32W) -> BOOL;
-    pub fn MultiByteToWideChar(
-        CodePage: UINT, dwFlags: DWORD, lpMultiByteStr: LPCSTR, cbMultiByte: c_int,
-        lpWideCharStr: LPWSTR, cchWideChar: c_int,
-    ) -> c_int;
+
     pub fn NeedCurrentDirectoryForExePathA(ExeName: LPCSTR) -> BOOL;
     pub fn NeedCurrentDirectoryForExePathW(ExeName: LPCWSTR) -> BOOL;
     pub fn NormalizeString(
@@ -905,10 +902,6 @@ extern "system" {
     pub fn WaitForThreadpoolWorkCallbacks(pwk: PTP_WORK, fCancelPendingCallbacks: BOOL);
     pub fn WaitNamedPipeW(lpNamedPipeName: LPCWSTR, nTimeOut: DWORD) -> BOOL;
     // pub fn WerpInitiateRemoteRecovery();
-    pub fn WideCharToMultiByte(
-        CodePage: UINT, dwFlags: DWORD, lpWideCharStr: LPCWSTR, cchWideChar: c_int,
-        lpMultiByteStr: LPSTR, cbMultiByte: c_int, lpDefaultChar: LPCSTR, lpUsedDefaultChar: LPBOOL,
-    ) -> c_int;
     pub fn Wow64DisableWow64FsRedirection(OldValue: *mut PVOID) -> BOOL;
     pub fn Wow64RevertWow64FsRedirection(OlValue: PVOID) -> BOOL;
     pub fn lstrcat(lpString1: LPSTR, lpString2: LPCSTR) -> LPSTR;
